@@ -9,9 +9,9 @@ public class InsertionSort {
 		 int key = input.getIndex(i);
 		 int minus = i - 1;
 		 while(minus >= 0 && input.getIndex(minus)> key) {
-			 //input.getIndex(minus + 1) = input.GetIndex(minus);
+			 input.swap(i, i-1);
 			 minus = minus - 1;
 		 }
-	 }//input.getIndex(minus + 1);
+	 }
  }
 }
