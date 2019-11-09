@@ -7,25 +7,26 @@ import java.util.Random;
 import org.junit.Assert;
 import org.junit.Test;
 
-import edu.smith.cs.csc212.sorting.mergeSort;
+import edu.smith.cs.csc212.sorting.BubbleSort;
 import me.jjfoley.adt.ListADT;
 import me.jjfoley.adt.impl.JavaList;
 
-public class mergeSortTest {
+@SuppressWarnings("javadoc")
+public class insertionSortTest {
 	@Test
-	public void testmergeSort() {
+	public void testBubbleSort() {
 		// See if the data can be reversed:
 		ListADT<Integer> sortMe = new JavaList<>();
 		for (int y : SortTestingHelpers.data) {
 			sortMe.addBack(y);
 		}
-		mergeSort.recursiveMergeSort(sortMe);
+		BubbleSort.sort(sortMe);
 		Assert.assertTrue(SortTestingHelpers.checkSorted(sortMe, SortTestingHelpers.data.length));
 		
 		Random rand = new Random(13);
 		// For good measure, let's shuffle it and sort it again to see if that works, too.
 		sortMe.shuffle(rand);
-		mergeSort.recursiveMergeSort(sortMe);
+		BubbleSort.sort(sortMe);
 		Assert.assertTrue(SortTestingHelpers.checkSorted(sortMe, SortTestingHelpers.data.length));
 		
 		// check it is the original size
@@ -33,14 +34,12 @@ public class mergeSortTest {
 	}
 	
 	@Test
-	public void testClassmergeSort() {
+	public void testClassBubbleSort() {
 		// See if the data can be reversed:
 		List<Integer> data = Arrays.asList(35, 88, 11, 47, 14, 24, 41, 62, 27);
 		ListADT<Integer> sortMe = new JavaList<>(data);
 		
-		//ListADT<Integer> sort = mergeSort.recursiveMergeSort(sortMe);
-		
-		mergeSort.recursiveMergeSort(sortMe);
+		BubbleSort.sort(sortMe);
 		Assert.assertTrue(SortTestingHelpers.checkSorted(sortMe, data.size()));
 		
 		// check it is the original size

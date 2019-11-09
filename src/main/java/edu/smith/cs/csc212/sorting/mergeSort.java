@@ -42,28 +42,16 @@ public class mergeSort {
 		}
 		return newSet;
 	}
-
-	public static ListADT<Integer> Mix(ListADT<Integer> List1, ListADT<Integer> List2) {
-		int small = 0;
-		ListADT<Integer>combinedList = new JavaList<>();
-		if(List1.size()<List2.size()) {
-			small = List1.size();
-		}else {
-			small=List2.size();
-		}
-		while(!List1.isEmpty()&&!List2.isEmpty()) {
-			if (List1.getFront() < List2.getFront()) {
-				small = List1.getFront();
-			}else if (List2.getFront()<=List1.getFront()) {
-				small = List2.getFront();
-			}
-			combinedList.addBack(small);
-		}
-		if(List1.isEmpty()) {
-			combinedList.addAll(List2);
-		}else if (List2.isEmpty()) {
-			combinedList.addAll(List1);
-		}
-		return combinedList;
-	}
 }
+
+/*
+ * public static ListADT<Integer> Mix(ListADT<Integer> List1, ListADT<Integer>
+ * List2) { int small = 0; ListADT<Integer>combinedList = new JavaList<>();
+ * if(List1.size()<List2.size()) { small = List1.size(); }else {
+ * small=List2.size(); } while(!List1.isEmpty()&&!List2.isEmpty()) { if
+ * (List1.getFront() < List2.getFront()) { small = List1.getFront(); }else if
+ * (List2.getFront()<=List1.getFront()) { small = List2.getFront(); }
+ * combinedList.addBack(small); } if(List1.isEmpty()) {
+ * combinedList.addAll(List2); }else if (List2.isEmpty()) {
+ * combinedList.addAll(List1); } return combinedList; } }
+ */
